@@ -13,9 +13,11 @@ const navItmes = [
 
 const Nav = () => {
   return (
-    <ul>
-      {navItmes.map(item => (
-        <li><Link to={item.path}>{item.title}</Link></li>
+    <ul className="list flex">
+      {navItmes.map((item, i) => (
+        <li className="pv1  pr4" key={i}>
+          <Link to={item.path}>{item.title}</Link>
+        </li>
       ))}
     </ul>
   )

@@ -2,7 +2,6 @@ function reminderReducer(state, action) {
   switch (action.type) {
     case 'SAVE_FORM_DATA': {
       const [data, input] = action.formData
-      debugger
       return {
         ...state,
         current: {
@@ -12,10 +11,32 @@ function reminderReducer(state, action) {
       }
     }
     case 'CREATE_REMINDER': {
-      debugger
+      const id = Date.now()
+      const newReminder = {
+        ...state.current,
+        id,
+      }
+
+      // updadate reminder
+      if (state.current.id) {
+        return {
+          ...state,
+          reminders: {
+            ...state.reminders,
+            [state.current.id]: state.current
+          },
+          current: newReminder,
+        }
+      }
+
+      // create reminder
       return {
         ...state,
-        reminders: [...state.reminders, state.current]
+        reminders: {
+          ...state.reminders,
+          [newReminder.id]: newReminder
+        },
+        current: newReminder,
       }
     }
     default: {

@@ -26,7 +26,8 @@ function useReminder() {
 
 const reminderInitialState = {
   current: {},
-  reminders: []
+  reminders: [],
+  active: null,
 }
 
 function ReminderProvider(props) {
