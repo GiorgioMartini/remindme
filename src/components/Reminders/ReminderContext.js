@@ -7,7 +7,7 @@ function useReminder() {
   if (!context) throw new Error(`useReminder must be used within a ReminderProvider`)
   const [state, dispatch] = context
 
-  const handleSetFormData = (formData) => dispatch({
+  const saveFormData = (formData) => dispatch({
     type: 'SAVE_FORM_DATA',
     formData
   })
@@ -19,7 +19,7 @@ function useReminder() {
   return {
     state,
     dispatch,
-    handleSetFormData,
+    saveFormData,
     createReminder,
   }
 }

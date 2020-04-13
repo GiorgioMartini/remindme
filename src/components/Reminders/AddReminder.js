@@ -6,15 +6,15 @@ import { useServices } from '../../hooks/useServices';
 
 const AddReminder = ({ history }) => {
   const [selectedCategory, setSelectedCategory] = useState('')
-  const { state, handleSetFormData, createReminder } = useReminder()
+  const { state, saveFormData, createReminder } = useReminder()
   const { loadingCategories, loadingProviders, categories, error, providers } = useServices(selectedCategory)
   const actionText = state.current.id ? `Update ${state.current.title}:` : 'Create a reminder'
-  const onChange = (e, id) => handleSetFormData([e.target.value, e.target.id])
-  const onDateChange = date => handleSetFormData([date, 'endDate'])
+  const onChange = (e, id) => saveFormData([e.target.value, e.target.id])
+  const onDateChange = date => saveFormData([date, 'endDate'])
   const onCategoryChange = (e, categories) => {
     const selectedCategorie = categories.find(c => c.id === e.target.value)
     setSelectedCategory(e.target.value)
-    handleSetFormData([selectedCategorie.categoryName, e.target.id])
+    saveFormData([selectedCategorie.categoryName, e.target.id])
   }
 
   const onSubmit = e => {

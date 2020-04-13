@@ -8,7 +8,7 @@ const Reminderoverview = ({ history }) => {
   if (!state.current.title) return <Redirect to="/" />
   const date = state.current.endDate
   const formatedDate = `${date.getDate()} ${date.getMonth()} ${date.getFullYear()}`
-  debugger
+
   return (
     <Fragment>
       <h3 className="f2 b">Reminder overview</h3>
