@@ -1,7 +1,6 @@
 import React from 'react'
 
 const Reminder = ({ match }) => {
-  debugger
   return (
     <div className="pa3 tc">
       <p className="f3">TODO:</p>

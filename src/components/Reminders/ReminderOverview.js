@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import "react-datepicker/dist/react-datepicker.css";
 import { useReminder } from './ReminderContext'
 import { Link, Redirect } from 'react-router-dom';
@@ -10,7 +10,7 @@ const Reminderoverview = ({ history }) => {
   const formatedDate = `${date.getDate()} ${date.getMonth()} ${date.getFullYear()}`
 
   return (
-    <Fragment>
+    <div data-testid="overview">
       <h3 className="f2 b">Reminder overview</h3>
       <p><b className="pr3">Title:</b> {state.current.title}</p>
       <p><b className="pr3">Category:</b> {state.current.category}</p>
@@ -26,7 +26,7 @@ const Reminderoverview = ({ history }) => {
           </li>
         })}
       </ul>
-    </Fragment>
+    </div>
   )
 }
 

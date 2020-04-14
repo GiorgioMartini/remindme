@@ -26,6 +26,9 @@ export const useServices = (provider) => {
       })
   }, [])
 
+  // We could also add a condition to check if we
+  // aready have either categories, or any of the providers
+  // stored in an object from a previous fetch so we can cache it. 
   useEffect(() => {
     if (provider) {
       setLoadingProviders(true)
