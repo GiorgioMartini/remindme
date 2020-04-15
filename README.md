@@ -1,7 +1,7 @@
 
 # Remindme challgenge
 
-Thanks for the opprtunity, to see the project, please follow these steps
+Thanks for the opportunity, to see the project, please follow these steps
 
   - Clone this repo
   - run `yarn` and then `yarn sart`
