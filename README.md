@@ -1,5 +1,5 @@
 
-# Remindme challgenge
+# Remindme challenge
 
 Thanks for the opportunity, to see the project, please follow these steps
 
